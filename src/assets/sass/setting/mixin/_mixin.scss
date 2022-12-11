@@ -1,0 +1,25 @@
+@use "../variables" as global;
+
+// メディアクエリ
+@mixin mq($breakpoint:sp) {
+  @media #{map-get(global.$breakpoints, $breakpoint)} {
+  @content;
+  }
+}
+
+//line-heightでできたスペース消去  @include global.lineHeightSpaceFill($1);で呼び出し
+@mixin lineHeightSpaceFill($line-height) {
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+  }
+  &::before {
+    margin-top: calc((1 - #{$line-height}) * 0.5em);
+  }
+  &::after {
+    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
+  }
+}

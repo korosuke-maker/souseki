@@ -1,0 +1,27 @@
+//.scroll-animation要素は、 jsでスクロール検知して、block-inを付与して下からふわっとアニメーション
+.scroll-animation{
+  opacity:0;
+  transform:translateY(80px);
+  transition:transform 0.8s ease , opacity 0.8s;
+  &.block-in{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+//animation-fadeIn要素 初期でopacityを0 スクロールを検知して、ふわっとopacity1にする
+.animation-fadeIn{
+  opacity: 0;
+}
+
+@keyframes show{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+.fadeIn{
+  animation:show ease 2s 1 forwards ;
+}

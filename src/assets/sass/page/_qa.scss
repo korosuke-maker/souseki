@@ -1,0 +1,124 @@
+@use "../setting" as global;
+
+.qa{
+  background: url(../img/qa-bg.png) no-repeat center center / cover ;
+  height: auto;
+}
+.qa__inner{
+  
+}
+.qa__title{
+  
+}
+
+.qa__content{
+  padding-top:56px;
+  padding-bottom:120px;
+  @include global.mq('sp') {
+    padding-top:40px;
+    padding-bottom: 60px;
+  }
+}
+
+.qa__items-wrap{
+  position: relative;
+  height: 910px;
+  width: 100%;
+  @include global.mq('sp') {
+    position:static;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.qa__items{
+  position: absolute;
+  width:612px;
+  max-width:100%;
+  top: 0;
+  right: 0;
+  @include global.mq('sp') {
+    position: static;
+  }
+}
+.qa__item{
+  &+&{
+    margin-top: 32px;
+  }
+  @include global.mq('sp') {
+    width: 100%;
+  }
+}
+
+.qa-box{
+  background:#FFFFFF;
+  border-radius:4px;
+}
+.qa-box__q{
+  width: 612px;
+  height: auto;
+  padding: 16px;
+  position: relative;
+  cursor: pointer;
+  @include global.mq('sp') {
+    width:inherit;
+  }
+  &::before{
+    position: absolute;
+    content:"Q";
+    text-align: center;
+    line-height:24px;
+    color:global.$text-color-white;
+    font-family: global.$ff-en;
+    font-weight:600;
+    background:#3B69FF;
+    width: 24px;
+    height: 24px;
+    left:16px;
+    top:50%;
+    transform: translateY(-50%);
+    border-radius:50%;
+  }
+
+}
+.qa-box__q__content{
+  padding-left:40px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+.qa-box__icon{
+  width: 17px;
+  height: 16px;
+  background: #000;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background:transparent url(../img/plus.png) no-repeat center center /contain;
+  transition: background 0.2s linear;
+  &.is-open{
+    background:url(../img/minus.png) no-repeat center center / contain ;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.qa-box__a{
+  width:612px;
+  height:auto;
+  padding:0 16px 16px 16px;
+  display: none;
+  @include global.mq('sp') {
+    width: 100%;
+  }
+}
+.qa-box__a__content{
+  width:580px;
+  padding: 16px;
+  background:#3B69FF33;
+  @include global.mq('sp') {
+    width:inherit;
+  }
+}
+
+

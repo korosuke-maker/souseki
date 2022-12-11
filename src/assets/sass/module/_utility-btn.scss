@@ -1,0 +1,36 @@
+@use "../setting" as global;
+
+.utility-btn{
+    display: inline-block;
+    height: 50px;
+    line-height:50px;
+    max-width:100%;
+    font-size: 18px;
+    letter-spacing:calc(0.45px/18px)+em;
+    text-align: center;
+    color:global.$text-color-white;
+    border-radius:10px;
+    background-color:global.$link-color;
+    box-shadow:0px 3px 5px 0 #3E3E3E33;
+    transition:all 0.3s ease 0s;
+    cursor: pointer;
+    @include global.mq('sp') {
+        font-size: 16px;
+        height: 48px;
+    }
+    &:hover{
+        background: #F18900;
+    }
+    &--contact{
+        width:282px;
+        @include global.mq('sp') {
+            width: 222px;
+            letter-spacing: 0;
+            line-height:48px;
+        }
+    }
+    &--submit{
+        width:173px;
+    }
+
+}

@@ -1,0 +1,95 @@
+@use "../setting" as global;
+@use 'sass:math';
+
+.comments{
+  height: 724px;
+  background:global.$section-color;
+  position: relative;
+  @include global.mq('sp') {
+    height: 485.5px;
+  }
+
+  &::after{
+  content:"";
+  width:calc(980 / 1200 * 100%);
+  height: calc(576px / (604px + 120px ) * 100%);
+  background:global.$main-color-black;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  @include global.mq('sp') {
+    width: 100%;
+    height: calc(375px / 425.5px * 100%);
+  }
+  }
+}
+
+.comments__inner{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:7;
+}
+.comments__inner__main-content{
+  background:global.$text-color-white;
+  width:calc(666 / 1200 * 100%);
+  @include global.mq('sp') {
+    width:343px;
+    max-width:100%;
+    margin: 0 auto;
+  }
+}
+.comments__title{
+  padding-left:60px;
+  @include global.mq('sp') {
+    padding-left:20px;
+  }
+}
+.comments__content{
+  padding:60px 60px 120px 60px;
+  @include global.mq('tab') {
+    padding:40px 40px 80px 40px;
+  }
+  @include global.mq('sp') {
+    padding:40px 20px 39.98px 20px;
+  }
+}
+.human__comment{
+  display: flex;
+  &+&{
+    margin-top:60px;
+    @include global.mq('sp') {
+      margin-top: 40px;
+    }
+  }
+  cursor: pointer;
+}
+.human__img{
+  width: 100px;
+  height: 100px;
+  max-width:100%;
+  @include global.mq('sp') {
+    width: 60px;
+    height: 60px;
+  }
+}
+.human__text{
+  width:calc((414 / (100 + 32 + 414)) * 100%) ;
+  padding-left: 32px;
+  line-height:math.div(24,16);
+  @include global.mq('sp') {
+    width:calc(223px / 303px * 100%);
+    padding-left:20px;
+    font-size: 14px;
+    line-height:math.div(20,14);
+  }
+}
+
+.comments__img{
+  width:calc(534px / 1200px * 100%);
+  @include global.mq('sp') {
+    display: none;
+  }
+}

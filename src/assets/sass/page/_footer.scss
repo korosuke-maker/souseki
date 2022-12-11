@@ -1,0 +1,140 @@
+@use "../setting" as global;
+
+footer{
+  background: global.$main-color-black;
+  color:global.$text-color-white;
+}
+.footer-inner{
+  width:960px;
+  max-width:100%;
+  padding:60px 0;
+  @include global.mq('pc') {
+    display: flex;
+  }
+  @include global.mq('tab') {
+    display: flex;
+  }
+}
+
+.footer-inner__left{
+  margin-right: auto;
+  @include global.mq('sp') {
+    margin-right:0;
+    text-align: center;
+  }
+}
+
+.footer-sns{
+  
+}
+
+.footer-sns__list{
+  display: flex;
+  gap:32px;
+  align-items: center;
+  @include global.mq('sp') {
+    justify-content: center;
+    gap:50px;
+  }
+}
+.footer-sns__item{
+  transition: transform 0.3s;
+  &:hover{
+    transform: scale(1.2);
+  }
+}
+
+.footer-sns__item__link{
+  i{
+    &::before{
+      display: inline-block;
+      font-family:'Font Awesome 6 Free','Font Awesome 6 Brands';
+      font-weight: 400;
+      font-style: normal;
+      opacity:0.6;
+    }
+  }
+}
+
+.footer-sns__item__link--twitter{
+  &:before{
+    content:'\f099';
+    font-size:36px;
+    line-height:30.6px;
+    @include global.mq('sp') {
+      line-height:36px;
+    }
+  }
+}
+
+.footer-sns__item__link--facebook{
+  &:before{
+    content:'\f082';
+    font-size:36px;
+    line-height:36px;
+  }
+}
+
+.footer-nav{
+  margin-top: 35px;
+  @include global.mq('sp') {
+    margin-top: 37px;
+  }
+}
+
+.footer-nav__list{
+  color:global.$text-color-white;
+  font-size:16px;
+  letter-spacing:calc(0.4px/16px)+em;
+  @include global.mq('sp') {
+    font-size:14px;
+    letter-spacing:calc(0.35px/14px)+em;
+  }
+}
+
+.footer-nav__list__link{
+  display: block;
+  transition: opacity 0.2s;
+  &:hover{
+    opacity:0.6;
+  }
+  & + &{
+    margin-top:20px;
+    @include global.mq('sp') {
+      margin-top:22px;
+    }
+  }
+}
+
+.footer-inner__right{
+  text-align: right;
+  @include global.mq('sp') {
+    text-align: center;
+  }
+}
+
+.footer-corp{
+  @include global.mq('sp') {
+    margin-top:30px;
+  }
+}
+.footer-corp__name{
+  font-weight: 700;
+  font-family: global.$ff-en;
+  color: #E3E3E3;
+  font-size: 40px;
+  @include global.mq('sp') {
+    font-size: 32px;
+  }
+}
+.footer-corp__copyright{
+  margin-top:5px;
+  opacity:0.6;
+  font-size: 12px;
+  font-family: global.$ff-en;
+  letter-spacing:calc(0.3px/12px)+em;
+  @include global.mq('sp') {
+    margin-top: 8px;
+  }
+}
+

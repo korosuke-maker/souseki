@@ -1,0 +1,79 @@
+@use "../setting" as global;
+@use "sass:math";
+
+.mainvisual{
+  background:url(../img/mv.png) no-repeat center center / cover ;
+  height:565px;
+  width: 100%;
+  padding-top: 83px;
+  position: relative;
+  @include global.mq('sp') {
+    height: 599px;
+    padding-top: 68px;
+  }
+}
+
+
+.mainvisual__content{
+  position: absolute;
+  width: calc(600px / 1200px * 100% );
+  max-width:100%;
+  left: 50%;
+  top: 236px;
+  font-weight: 700;
+  text-align: left;
+  @include global.mq('tab') {
+    
+  }
+  @include global.mq('sp') {
+    width: 343px;
+    position:static;
+    margin: 153px auto 0; 
+  }
+}
+.mainvisual__title{
+  line-height:math.div(48,32);
+  font-size: 32px;
+  letter-spacing: 0.02px;
+  @include global.mq('tab') {
+    font-size:26px;
+  }
+  @include global.mq('sp') {
+    font-size: 24px;
+    text-align: left;
+    line-height:math.div(40,24);
+  }
+}
+.mainvisual__text{
+  font-size: 18px;
+  margin-top: 27px;
+  line-height: math.div(28,18);
+  letter-spacing: 0.45px;
+  @include global.mq('tab') {
+    font-size: 16px;
+    margin-top: 23px;
+  }
+  @include global.mq('sp') {
+    margin-top: 20px;
+    font-size:14px;
+    text-align: left;
+    line-height:math.div(20,14);
+    span{
+      display: block;
+    }
+  }
+}
+.mainvisual__btn{
+  margin-top: 35px;
+  font-size: 18px ;
+  @include global.mq('tab') {
+    margin-top: 30px;
+    font-size: 16px;
+  }
+  @include global.mq('sp') {
+    font-size: 14px;
+    margin-top: 27px;
+    text-align: center;
+  }
+}
+

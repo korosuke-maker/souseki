@@ -1,0 +1,111 @@
+@use "../setting" as global;
+
+// スマホ時のdrawer（ハンバーガーメニュー）
+
+//buttonタグリセット
+button[type="button"]{
+  border:0;
+  background:none;
+  appearance: none;
+  width: auto;
+  overflow: visible;
+  cursor: pointer;
+}
+
+// icon スマホ時にだけ表示する
+.drawer-icon{
+  position: fixed;
+  top:24px;
+  right:16px;
+  z-index:map-get(global.$layer,drawer-icon);
+  display: none;
+  @include global.mq('sp') {
+    display:block;
+    transition: transform 0.4s;
+  }
+// is-activeというクラスが付与されたら、iconをx軸方向に移動させて、その時のdrawer-icon__barsはbatsu印に変える。
+  &.is-active{
+    transform:translateX(-(calc(300/375 * 100))+vw);
+    > .drawer-icon__bars{
+      width: 21px;
+      height: 21px;
+      background:url(../img/sp/batsu.png) no-repeat center center / contain;
+    }
+  }
+}
+
+// iconのはじめの状態 closedしている時のデザイン
+.drawer-icon__bars{
+  display: block;
+  width:26px;
+  height: 20px;
+  background:url(../img/sp/hamburger.png) no-repeat center center / contain;
+  transition: all 0.9s;
+}
+
+//drawerのis-active時のメニュー
+.drawer-content{
+  @include global.mq('pc') {
+    display: none;
+  }
+  @include global.mq('tab') {
+    display: none;
+  }
+  @include global.mq('sp') {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #FFFFFF;
+    z-index:map-get(global.$layer,drawer-content);
+    width:calc(300px / 375px * 100%);
+    height:100%;
+    transform: translateX(101%);
+    transition:transform 0.5s ease-in-out;
+    &.is-active{
+      transform: translateX(0);
+    }
+  }
+}
+
+.drawer-content__items{
+  padding:160px 0px 155px;
+  text-align: center;
+}
+
+.drawer-content__item{
+  & + &{
+    margin-top: 30px;
+  }
+  a{
+    display: block;
+    font-size:18px;
+    font-family: global.$ff-en;
+    &:hover{
+      opacity:0.6;
+    }
+  }
+}
+
+// drawerのis-active時の背景
+.drawer-background{
+  @include global.mq('pc') {
+    display: none;
+  }
+  @include global.mq('tab') {
+    display: none;
+  }
+  @include global.mq('sp') {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:global.$main-color-black;
+    z-index: map-get(global.$layer,drawer-background);
+    // display:none;で要素がない状態でないとz-indexの関係上ページの要素が押せなくなる display:none;なのでtransitionもできない
+    display: none;
+    &.is-active{
+      display: block;
+    }
+  }
+}

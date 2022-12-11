@@ -1,0 +1,31 @@
+@use "../setting" as global;
+
+
+.to-top{
+  position: fixed;
+  z-index:map-get(global.$layer,floating);
+  right:30px;
+  bottom:30px;
+  opacity:0;
+  visibility: hidden;
+  transition:all 0.3s;
+  @include global.mq('sp') {
+    right:16px;
+    bottom:13px;
+  }
+  &.is-show{
+    opacity:1;
+    visibility: visible;
+  }
+  a{
+    text-decoration: none;
+    transition: all 0.3s;
+    &:hover{
+      opacity:0.6;
+    }
+    img{
+      width: 50px;
+    }
+  }
+}
+

@@ -1,0 +1,83 @@
+@use "../setting" as global;
+
+.swiper-parts{
+
+}
+
+.swiper {
+	width:100%;
+	height: 426px;
+	overflow: visible;
+	@include global.mq('tab') {
+		width: 100%;
+	}
+  @include global.mq('sp') {
+		height: 310px;
+    width: 100%;
+  }
+}
+
+.swiper-slide {
+  width: 400px;
+	@include global.mq('sp') {
+		width:274px;
+	}
+}
+
+.swiper-pagination-bullet {
+	background: #fff;
+	height: 12px;
+	opacity: 1;
+	width: 12px;
+}
+
+
+.swiper-pagination-bullet-active {
+	position: relative;
+}
+
+.swiper-pagination-bullet-active::after {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	content: "";
+	height: 18px;
+	left: -3px;
+	position: absolute;
+	top: -3px;
+	width: 18px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:not(:last-child),
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet:not(:last-child) {
+	margin-right: 20px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+	bottom: 0;
+	height: 20px;
+	width: 176px;
+}
+
+.swiper-pagination {
+	-moz-text-align-last: left;
+	text-align-last: left;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+	left:3px;
+	@include global.mq('tab') {
+		left: 3px;
+	}
+	@include global.mq('sp') {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

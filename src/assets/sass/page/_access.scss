@@ -1,0 +1,127 @@
+@use "../setting" as global;
+
+.access{
+  background:global.$section-color;
+  position: relative;
+  &::after{
+    position: absolute;
+    width: calc(980 / 1200 * 100%);
+    max-width:100%;
+    height:504px;
+    content: "";
+    top: 0;
+    left: 0;
+    background:global.$main-color-black;
+    @include global.mq('sp') {
+      display: none;
+    }
+  }
+  @include global.mq('sp') {
+    background:global.$main-color-black;
+  }
+}
+.access__inner{
+  color:global.$text-color-white;
+  position: relative;
+  z-index:map-get(global.$layer,access__inner);
+  padding: 120px 0;
+  display: flex;
+  @include global.mq('sp') {
+    flex-direction: column;
+    padding:0px 16px 40px;
+  }
+}
+
+.access__content{
+  width:314px;
+  margin-right: 100px;
+  @include global.mq('sp') {
+    display: contents;
+    width: 100%;
+  }
+}
+
+.access__title{
+  padding-top: 0;
+  @include global.mq('sp') {
+    margin-left:0;
+    order: 1;
+  }
+}
+
+.access__info{
+  margin-top: 60px;
+  @include global.mq('sp') {
+    margin-left: 0;
+    margin-top: 35px;
+    order:2;
+  }
+}
+
+.access__info__address{
+  line-height:calc(24px / 16px);
+  @include global.mq('sp') {
+    font-size:14px;
+    line-height:calc(20px / 14px);
+  }
+}
+
+
+.access__map{
+  width: calc(100% - (314px + 100px));
+  max-width:100%;
+  max-height:520px;
+  @include global.mq('sp') {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 24px;
+    order: 3;
+  }
+}
+
+.access__map__wrap{
+  width: 100%;
+  padding-top:calc(520px / 726px * 100%);
+  height: 0;
+  position: relative;
+  @include global.mq('sp') {
+    padding-top:calc(241px / 343px * 100%);
+    // max-height:241px;
+  }
+  iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.access__btn{
+  width: 314px;
+  margin-top: 32px;
+  max-width:100%;
+  @include global.mq('sp') {
+    width: 100%;
+    max-width:100%;
+    text-align: center;
+    margin-top:24px;
+    order:4;
+  }
+}
+
+// .access__bg{
+//   position: absolute;
+//   width: calc(980 / 1200 * 100%);
+//   max-width:100%;
+//   height: calc(504px / 724px * 100%);
+//   content: "";
+//   top: 0;
+//   left: 0;
+//   z-index:map-get(global.$layer,access__bg);
+//   background:global.$main-color-black;
+//   @include global.mq('sp') {
+//     display: none;
+//   }
+// }
+

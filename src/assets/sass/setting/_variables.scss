@@ -1,0 +1,62 @@
+//色
+$main-color-black:#3E3E3E;
+$text-color-white:#FFFFFF;
+$link-color:#FFAA3B;
+$accent-color:#4973FF;
+$accent-color-required:#FF4646;
+$section-color:#F3F3F3;
+
+//フォント
+$ff-base:YuGothic,'Yu Gothic',sans-serif;
+$ff-en:'Montserrat',sans-serif;
+$fz-base:16px;
+$fw-base:500;//Medium
+$lh-base:1.1875;
+
+//レイアウト
+$inner-width:1200px;
+$sp-width:768px;
+
+//ブレイクポイント
+$breakpoints:(
+"sp": "screen and (max-width: #{$sp-width - 1px})",
+"tab": "screen and (min-width:768px ) and (max-width:#{$inner-width - 1px})",
+"pc": "screen and (min-width:#{$inner-width})"
+);
+
+
+
+//重なり順の定義 取り出し方の例 → map-get(global.$layer,service__menus)
+
+$layer : (
+  // モーダル
+  modal-privacy:101,
+  modal-privacy__background: 100,
+
+  // ドロワー
+  drawer-icon: 40,
+  drawer-content:39,
+  drawer-background:38,
+
+  // フローティング
+  floating: 30,
+
+  // ヘッダー
+  header: 20,
+
+  // フッター
+  footer: 10,
+  // newsセクション
+  news__inner:7,
+
+  // serviceセクション
+  service__title:7,
+  service__menus:7,
+  service:5,
+  //accessセクション
+  access__inner:7,
+  access__map:7,
+  access__bg:3,
+  default: 1
+
+);

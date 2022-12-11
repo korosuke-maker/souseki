@@ -1,0 +1,53 @@
+@use "../setting" as global;
+@use "sass:math";
+
+.section-head{
+  font-size: 36px;
+  font-weight: 600;
+  font-family: global.$ff-en;
+  @include global.mq('sp') {
+    font-size: 30px;
+  }
+
+// pc時中央にあるタイトル
+  &--center{
+    text-align: center;
+    // 中央にあるものの中でprice__title以外
+    &:not(.price__title){
+      padding-top: 60px;
+      @include global.mq('sp') {
+        padding-top: 40px;
+      }
+    }
+    // 中央にあるものの中でprice__titleだけ
+    &.price__title{
+      padding-top: 120px;
+      @include global.mq('sp') {
+        padding-top:40px;
+      }
+    }
+  }
+
+// pc時左側にあるタイトル
+  &--left{
+    padding-top:120px;
+    //スマホ時 padding-top40px
+    @include global.mq('sp') {
+      padding-top: 40px;
+    }
+    //左側にあるタイトルの中でresults__title
+    .results__title{
+      padding-top:60px;
+      @include global.mq('sp') {
+        padding-top:40px;
+        text-align: center;
+      }
+    }
+  }
+
+//白文字タイトルにつけるクラス
+  &.is-white{
+    color:global.$text-color-white;
+  }
+
+}

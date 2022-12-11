@@ -1,0 +1,125 @@
+@use "../setting" as global;
+@use 'sass:math';
+
+.results{
+  background:global.$section-color;
+}
+
+.results-inner-wrap{
+  
+}
+
+.results__inner{
+  padding-bottom:60px;
+  padding-left: 60px;
+  width:calc(100% - 40px);
+  max-width:100%;
+  margin-left: 40px;
+  background:global.$main-color-black;
+  overflow-x: scroll;
+  color: #fff;
+  @include global.mq('sp') {
+    padding-bottom:40px;
+    padding-left:16px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+.results__title{
+  @include global.mq('sp') {
+    padding-left:0;
+    text-align: center;
+  }
+}
+
+.results__cards{
+  overflow: hidden;
+  margin-top: 60px;
+  cursor: pointer;
+  @include global.mq('sp') {
+    margin-top: 40px;
+  }
+}
+
+.results__card{
+  max-width:100%;
+  transition: transform 0.3s;
+  @include global.mq('sp') {
+    width: 274px;
+    height:253px;
+  }
+}
+
+.card__img{
+  img{
+    width: 100%;
+    height: auto;
+    @include global.mq('sp') {
+      width: 274px;
+    }
+  }
+}
+
+.card__body{
+  padding:16px;
+  background:global.$text-color-white;
+  color:global.$main-color-black;
+  @include global.mq('sp') {
+    padding:12px;
+  }
+}
+
+.card__body__title{
+  font-size: 20px;
+  line-height:math.div(24,20);
+  font-weight: 700;
+  //titleが長くなった場合は...で省略
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include global.mq('tab') {
+    font-size:16px;
+    line-height:math.div(20,16);
+  }
+  @include global.mq('sp') {
+    font-size: 14px;
+    letter-spacing:0.01px;
+    line-height:math.div(16,14);
+  }
+}
+
+.card__body__text{
+  line-height:math.div(24,16);
+  margin-top:8px;
+  //textが長くなった場合は...で省略 二行まで表示してその後はhidden
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  @include global.mq('tab') {
+    font-size:14px;
+    line-height:math.div(20,14);
+  }
+  @include global.mq('sp') {
+    margin-top:6px;
+    font-size: 12px;
+    letter-spacing:calc(0.01px/12px)+em;
+    line-height:math.div(18,12);
+  }
+}
+
+.results__btn{
+  margin-top: 40px;
+  @include global.mq('sp') {
+    margin-top: 24px;
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+
+
+

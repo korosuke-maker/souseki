@@ -1,0 +1,56 @@
+@use "../setting" as global;
+@use "sass:math";
+
+.btn-link{
+  display: inline-block;
+  font-size: 20px;
+  height: 64px;
+  font-weight: 600;
+  line-height:64px;
+  letter-spacing:4px;
+  text-align: center;
+  border:1px solid #707070;
+  transition: all 0.2s ease 0s;
+  max-width:100%;
+  @include global.mq('sp') {
+    height: 54px;
+    line-height:54px;
+    font-size: 18px;
+    letter-spacing: 3.6px;
+  }
+  &--more{
+    width:236px;
+    @include global.mq('sp') {
+      width:268px;
+    }
+  }
+
+  &--viewall{
+    width: 289px;
+    @include global.mq('sp') {
+      width: 316px;
+    }
+  }
+
+  &--googlemaps{
+    width: 314px;
+    letter-spacing: 2px;
+  }
+
+  &--white{
+    background: #FFFFFF;
+    &:hover{
+      background:global.$main-color-black;
+      color: global.$text-color-white;
+    }
+  }
+  &--black{
+    background:global.$main-color-black;
+    color:global.$text-color-white;
+    border:1px solid #FFFFFF;
+    &:hover{
+      background: global.$text-color-white;
+      color:global.$main-color-black;
+    }
+  }
+}

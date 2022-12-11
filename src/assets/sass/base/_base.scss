@@ -1,0 +1,45 @@
+@use "../setting" as global;
+
+html,body{
+  &.is-fixed{
+    overflow: hidden;
+  }
+}
+
+
+// サイト全体で使うようなベースのものをglobalフォルダから読み込んでおく
+body{
+  color: global.$main-color-black;
+  font-family: global.$ff-base;
+  font-size: global.$fz-base;
+  font-weight: global.$fw-base;
+  line-height: global.$lh-base;
+  }
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+a{
+  color: inherit;
+}
+
+
+// デバイス幅による非表示
+//PC時にスマホでは非表示にする
+.is-pc{
+  @include global.mq('sp') {
+    display: none;
+  }
+}
+//スマホ時にはPCで非表示にする
+.is-sp{
+  @include global.mq('pc') {
+    display: none;
+  }
+}
+
+
+
+

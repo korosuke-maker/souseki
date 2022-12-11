@@ -1,0 +1,384 @@
+@use "../setting" as global;
+
+.contact{
+  background:url(../img/contact-bg.png) no-repeat center center / cover;
+}
+
+.contact__inner{
+  width:960px;
+  max-width:100%;
+  padding-top:60px;
+  padding-bottom:60px;
+  @include global.mq('sp') {
+    padding-top:40px;
+  }
+}
+
+.contact-head-content{
+  background:url(../img/contact1.png) no-repeat center center / cover;
+  border-radius:12px 12px 0 0;
+  @include global.mq('sp') {
+    background:url(../img/sp/contact1.png) no-repeat center center / cover;
+    padding:0px 16px;
+  }
+}
+
+.contact__title{
+  
+}
+
+.contact__lead{
+  color:global.$text-color-white;
+  text-align: center;
+  margin-top:12px;
+  padding-bottom:60px;
+  @include global.mq('sp') {
+    padding-bottom: 40px;
+    text-align: left;
+    font-size: 14px;
+  }
+}
+
+.contact-main-content{
+  background:global.$text-color-white;
+  padding:60px 0;
+  border-radius:0 0 12px 12px;
+  @include global.mq('sp') {
+    padding:40px 12px;
+  }
+}
+
+.contact-form{
+  width:calc(720px / 960px) * 100%;
+  margin:0 auto;
+  @include global.mq('sp') {
+    width: 100%;
+  }
+}
+.contact-form__list{
+  width:720px;
+  max-width:100%;
+}
+.contact-item{
+  display: flex;
+  align-items: center;
+  @include global.mq('sp') {
+    display: block;
+    width:100%;
+  }
+  &+&{
+    margin-top: 32px;
+  }
+  &.item-message{
+    display: block;
+  }
+
+}
+.contact-item__label{
+  display: inline-block;
+  flex:0 0 128px;
+  vertical-align: middle;
+  font-weight: 700;
+  user-select: none;
+  label{
+    cursor: pointer;
+    &.is-required{
+      position: relative;
+      display: inline-block;
+      padding-right:52px;
+      &::after{
+        content:"必須";
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+        right:0;
+        width: 40px;
+        height: 16px;
+        line-height:16px;
+        text-align: center;
+        color:#fff;
+        background:global.$accent-color-required;
+        border-radius:2px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+
+.contact-item__input{
+  @include global.mq('pc') {
+    flex:0 1 100%;
+  }
+  @include global.mq('tab') {
+    flex:0 1 100%;
+  }
+  @include global.mq('sp') {
+    margin-top: 10px;
+  }
+  &:not(.input-message){
+    padding-left:60px;
+    @include global.mq('sp') {
+      padding-left: 0;
+    }
+  }
+  &.input-message{
+    margin-top:5px;
+  }
+  [type="text"],
+  [type="email"],
+  textarea{
+    border:0;
+    box-shadow: none;
+    appearance: none;
+    border-radius: 0;
+    color:inherit;
+    font-family:inherit;
+    width: 100%;
+    font-size: 16px;
+    padding:0.625em 0.9375em;
+    transition: all 0.3s;
+    cursor: pointer;
+    @include global.mq('sp') {
+      font-size: 14px;
+      padding:0px 0px 5px;
+    }
+  }
+
+  [type="text"],
+  [type="email"]{
+    border-bottom:1px solid rgba(62, 62, 62, 0.5);
+    &:hover,&:focus{
+      border-bottom: 1px solid #4973FF;
+      box-shadow:0px 5px 4px -4px rgba(73, 115, 255, 0.5);
+    }
+  }
+
+  textarea{
+    border:1px solid #707070;
+    min-height:200px;
+    resize: vertical;
+    &:hover,&:focus{
+      border: 1px solid #4973FF;
+      box-shadow:0px 0px 8px 0px rgba(73, 115, 255, 0.5);
+    }
+    @include global.mq('sp') {
+      min-height:160px;
+    }
+  }
+
+  select{
+    width:178px;
+    max-width:100%;
+    border: none;
+    box-shadow:none;
+    appearance: none;
+    background:none;
+    border-radius: 0;
+    color:inherit;
+    font-family:inherit;
+    vertical-align: middle;
+    height:40px;
+    line-height:40px;
+    padding:0 12px;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    @include global.mq('sp') {
+      font-size: 14px;
+      height:38px;
+      line-height: 38px;
+    }
+    // background:#fff url(https://haniwaman.com/cms/wp-content/uploads/2018/12/form-css-arrow.png) no-repeat right 13px center / 16px 16px;
+    // https://haniwaman.com/cms/wp-content/uploads/2018/12/form-css-arrow.png
+    
+  }
+
+  [type="radio"]{
+    appearance: none;
+    opacity:0;
+    position: absolute;
+  }
+}
+
+.input-select-wrap{
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  border:1px solid #707070;
+  width: 178px;
+  height: 40px;
+  @include global.mq('sp') {
+    width: 100%;
+  }
+  &:hover{
+    box-shadow:0px 0px 5px rgba(73, 115, 255, 0.5);
+  }
+  &::before{
+    position: absolute;
+    top:12px;
+    transform:rotate(-45deg);
+    right: 16px;
+    display: inline-block;
+    content:"";
+    border-left:3px solid global.$main-color-black;
+    border-bottom:3px solid global.$main-color-black;
+    background: transparent;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.contact-radio-input{
+  
+}
+.input-radio-gender{
+  display: inline-block;
+  padding-left:20px;
+  line-height:16px;
+  position: relative;
+  cursor: pointer;
+  //クリックした時にtextを選択させない
+  user-select:none;
+
+  &.female{
+    margin-left:40px;
+  }
+  
+
+  &::before{
+    content:"";
+    width: 12px;
+    height: 12px;
+    border:1px solid #707070;
+    border-radius:50%;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left: 0;
+  }
+
+  &:hover{
+    &::before{
+      border:1px solid #3B69FF;
+      box-shadow:0px 0px 6px 0px rgba(73, 115, 255, 0.2) ;
+    }
+  }
+
+  &:active{
+    &::before{
+      border:1px solid #3B69FF;
+      background: rgba(73, 115, 255, 0.2);
+    }
+  }
+
+  &::after{
+    content:"";
+    width: 6px;
+    height: 6px;
+    border-radius:50%;
+    background: #3B69FF;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 3px;
+    opacity: 0;
+    transition: all .2s;
+  }
+}
+
+.contact-item__input{
+  [type="radio"]:checked + .input-radio-gender {
+    &::after{
+      opacity: 1;
+    }
+  }
+  [type="radio"]{
+    &:focus-visible + .input-radio-gender {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+  }
+
+}
+
+
+.contact-footer{
+  margin-top: 40px;
+  @include global.mq('sp') {
+    margin-top: 32px;
+  }
+}
+.contact-privacy{
+  [type="checkbox"]{
+    appearance: none;
+    opacity: 0;
+    position: absolute;
+  }
+  [type="checkbox"]:checked + .contact-privacy__text{
+    &::after{
+      opacity:1;
+    }
+  }
+  [type="checkbox"]:focus-visible + .contact-privacy__text{
+    &::before{
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+  }
+}
+
+.contact-privacy__text{
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-block;
+  padding-left:40px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+
+  &::before{
+    content:"";
+    width:20px;
+    height: 20px;
+    border:1px solid #707070;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:0;
+    transition: all 0.2s;
+  }
+
+  &:hover{
+    &::before{
+      border:1px solid #3B69FF;
+      box-shadow: 0px 0px 5px 0px rgba(73, 115, 255, 0.2);
+    }
+  }
+
+  &:active{
+    &::before{
+      background: rgba(73, 115, 255, 0.2);
+    }
+  }
+
+  &::after{
+    content:"";
+    border-bottom:3px solid #3B69FF;
+    border-right:3px solid #3B69FF;
+    width:8px;
+    height:18px;
+    position: absolute;
+    left:6px;
+    top: 0px;
+    transform: rotate(45deg);
+    opacity:0;
+    transition:all 0.2s ;
+  }
+}
+.contact-submit{
+  margin-top: 40px;
+  @include global.mq('sp') {
+    margin-top: 34px;
+    text-align: center;
+  }
+}

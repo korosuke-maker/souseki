@@ -1,0 +1,20 @@
+@use "../setting" as global;
+
+
+.inner{
+  width: global.$inner-width; //インナー幅1200px
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  @include global.mq('tab') {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  @include global.mq('sp') {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
+
